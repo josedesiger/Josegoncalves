@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="pt" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>José Gonçalves | Site Pessoal</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700;800;900&display=swap');
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: Urbanist, Verdana, sans-serif;
+    }
+
+    .site-shell {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      position: relative;
+    }
+
+    .grid-glow {
+      background-image:
+        linear-gradient(rgba(0, 255, 194, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 194, 0.08) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
+      -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
+    }
+
+    .scanline {
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 255, 194, 0.08),
+        transparent
+      );
+      animation: scan 5.8s ease-in-out infinite;
+    }
+
+    @keyframes scan {
+      0% { transform: translateY(-100%); opacity: 0; }
+      18% { opacity: 1; }
+      65% { opacity: 0.75; }
+      100% { transform: translateY(100%); opacity: 0; }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.85s ease both;
+    }
+
+    .delay-1 { animation-delay: 0.12s; }
+    .delay-2 { animation-delay: 0.24s; }
+    .delay-3 { animation-delay: 0.36s; }
+    .delay-4 { animation-delay: 0.48s; }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .glass-card {
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .pulse-ring {
+      animation: pulseRing 2.2s ease-out infinite;
+    }
+
+    @keyframes pulseRing {
+      0% {
+        transform: scale(0.85);
+        opacity: 0.75;
+      }
+      70% {
+        transform: scale(1.55);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1.55);
+        opacity: 0;
+      }
+    }
+
+    .skill-pill {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .skill-pill:hover {
+      transform: translateY(-4px);
+    }
+
+    .whatsapp-button {
+      transition: transform 0.22s ease, filter 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-3px) scale(1.015);
+      filter: brightness(1.08);
+    }
+
+    .whatsapp-button:focus,
+    a:focus,
+    button:focus {
+      outline: 3px solid rgba(255, 255, 255, 0.78);
+      outline-offset: 4px;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="siteShell" class="site-shell bg-[#06110f] text-[#eafff9]">
+   <div class="absolute inset-0 grid-glow pointer-events-none"></div>
+   <div class="absolute inset-x-0 top-0 h-full scanline pointer-events-none"></div>
+   <header class="relative z-10 w-full">
+    <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6 md:px-10" aria-label="Navegação principal"><a href="#inicio" class="flex items-center gap-3 rounded-full"> <span id="logoMark" class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#00ffc2] text-[#06110f] shadow-lg shadow-[#00ffc2]/25"> <i data-lucide="shield-check" aria-hidden="true"></i> </span> <span class="leading-tight"> <span id="navName" class="block font-black tracking-wide">José Gonçalves</span> <span id="navAlias" class="block text-sm opacity-70">Sucesso</span> </span> </a>
+     <div class="hidden items-center gap-5 rounded-full border border-[#163d35] bg-[#09201c]/70 px-5 py-3 text-sm font-semibold md:flex"><a href="#sobre" class="hover:opacity-80">Sobre</a> <a href="#funcoes" class="hover:opacity-80">Funções</a> <a href="#contacto" class="hover:opacity-80">Contacto</a>
+     </div>
+    </nav>
+   </header>
+   <main class="relative z-10">
+    <section id="inicio" class="mx-auto grid w-full max-w-6xl items-center gap-10 px-6 pb-12 pt-6 md:grid-cols-[1.08fr_0.92fr] md:px-10 md:pb-16 md:pt-10">
+     <div class="fade-up">
+      <div id="heroBadge" class="mb-5 inline-flex items-center gap-2 rounded-full border border-[#163d35] bg-[#09201c]/80 px-4 py-2 text-sm font-bold text-[#00ffc2] shadow-xl shadow-black/20"><span class="relative flex h-3 w-3"> <span class="absolute inline-flex h-full w-full rounded-full bg-[#00ffc2] pulse-ring"></span> <span class="relative inline-flex h-3 w-3 rounded-full bg-[#00ffc2]"></span> </span> Cyber Segurança • OSINT • Design
+      </div>
+      <h1 id="heroTitle" class="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">José Gonçalves</h1>
+      <p id="heroSubtitle" class="mt-5 text-2xl font-extrabold text-[#00ffc2] md:text-3xl">Conhecido como “Sucesso”</p>
+      <p id="heroIntro" class="mt-6 max-w-2xl text-lg leading-8 text-[#eafff9]/78">Profissional focado em tecnologia, investigação digital, design e segurança cibernética, com visão estratégica e atenção aos detalhes.</p>
+      <div class="mt-8 flex flex-col gap-4 sm:flex-row"><a id="mainWhatsappButton" href="https://wa.me/244939304963" target="_blank" rel="noopener noreferrer" class="whatsapp-button inline-flex items-center justify-center gap-3 rounded-2xl bg-[#00ffc2] px-6 py-4 text-base font-black text-[#06110f] shadow-2xl shadow-[#00ffc2]/25"> <i data-lucide="message-circle" aria-hidden="true"></i> <span id="buttonText">Enviar mensagem no WhatsApp</span> </a> <a href="#funcoes" class="inline-flex items-center justify-center gap-3 rounded-2xl border border-[#163d35] bg-[#09201c]/80 px-6 py-4 text-base font-bold text-[#eafff9] hover:bg-[#0d2d27]"> <i data-lucide="briefcase" aria-hidden="true"></i> Ver funções </a>
+      </div>
+     </div>
+     <aside class="fade-up delay-2" aria-label="Cartão profissional">
+      <div id="profileCard" class="glass-card overflow-hidden rounded-[2rem] border border-[#163d35] bg-[#09201c]/82 shadow-2xl shadow-black/35">
+       <div class="border-b border-[#163d35] px-6 py-4">
+        <div class="flex items-center gap-2"><span class="terminal-dot bg-[#00ffc2]"></span> <span class="terminal-dot bg-[#eafff9]/45"></span> <span class="terminal-dot bg-[#eafff9]/20"></span> <span class="ml-auto text-xs font-bold uppercase tracking-[0.24em] text-[#00ffc2]">Perfil</span>
+        </div>
+       </div>
+       <div class="p-7">
+        <div class="relative mx-auto mb-7 flex h-44 w-44 items-center justify-center rounded-full border border-[#00ffc2]/40 bg-[#06110f] shadow-2xl shadow-[#00ffc2]/10">
+         <div class="absolute inset-3 rounded-full border border-dashed border-[#00ffc2]/35"></div>
+         <div class="absolute inset-7 rounded-full bg-[#00ffc2]/10"></div><span class="relative text-6xl font-black text-[#00ffc2]">JG</span>
+        </div>
+        <h2 id="cardName" class="text-center text-3xl font-black">José Gonçalves</h2>
+        <p id="cardAlias" class="mt-2 text-center font-bold text-[#00ffc2]">Sucesso</p>
+        <div class="mt-7 grid gap-3">
+         <div class="flex items-start gap-3 rounded-2xl border border-[#163d35] bg-[#06110f]/70 p-4"><i data-lucide="map-pin" class="mt-1 text-[#00ffc2]" aria-hidden="true"></i>
+          <p id="miniLocation" class="text-sm leading-6 text-[#eafff9]/82">Nóqui, província de Zaire, norte de Angola</p>
+         </div>
+         <div class="flex items-start gap-3 rounded-2xl border border-[#163d35] bg-[#06110f]/70 p-4"><i data-lucide="building-2" class="mt-1 text-[#00ffc2]" aria-hidden="true"></i>
+          <p id="miniWorkplace" class="text-sm leading-6 text-[#eafff9]/82">Cyber Joseph Diassonua</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </aside>
+    </section>
+    <section id="sobre" class="mx-auto w-full max-w-6xl px-6 py-8 md:px-10">
+     <div class="grid gap-6 md:grid-cols-2">
+      <article id="aboutCard" class="fade-up delay-1 rounded-[1.75rem] border border-[#163d35] bg-[#09201c]/82 p-7 shadow-xl shadow-black/20">
+       <div class="mb-5 flex h-13 w-13 items-center justify-center rounded-2xl bg-[#00ffc2] p-3 text-[#06110f]"><i data-lucide="user-round" aria-hidden="true"></i>
+       </div>
+       <h2 id="aboutTitle" class="text-3xl font-black">Quem sou eu</h2>
+       <p id="aboutText" class="mt-4 text-lg leading-8 text-[#eafff9]/78">Sou José Gonçalves, conhecido pelo nome de Sucesso. Trabalho com tecnologia, criatividade e investigação digital, sempre procurando soluções inteligentes e seguras.</p>
+      </article>
+      <article id="originCard" class="fade-up delay-2 rounded-[1.75rem] border border-[#163d35] bg-[#09201c]/82 p-7 shadow-xl shadow-black/20">
+       <div class="mb-5 flex h-13 w-13 items-center justify-center rounded-2xl bg-[#00ffc2] p-3 text-[#06110f]"><i data-lucide="globe-2" aria-hidden="true"></i>
+       </div>
+       <h2 id="originTitle" class="text-3xl font-black">Onde nasci</h2>
+       <p id="originText" class="mt-4 text-lg leading-8 text-[#eafff9]/78">Nasci no município fronteiriço do Nóqui, que se encontra a norte de Angola, na província de Zaire.</p>
+      </article>
+     </div>
+    </section>
+    <section id="funcoes" class="mx-auto w-full max-w-6xl px-6 py-8 md:px-10">
+     <div id="workPanel" class="fade-up delay-3 rounded-[2rem] border border-[#163d35] bg-[#09201c]/82 p-7 shadow-2xl shadow-black/25 md:p-9">
+      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+       <div>
+        <p class="mb-2 text-sm font-black uppercase tracking-[0.26em] text-[#00ffc2]">Competências</p>
+        <h2 id="workTitle" class="text-4xl font-black md:text-5xl">O que eu faço</h2>
+       </div>
+       <div class="rounded-2xl border border-[#163d35] bg-[#06110f]/70 px-5 py-3 text-sm font-bold text-[#eafff9]/80">
+        Perfil digital multidisciplinar
+       </div>
+      </div>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+       <div class="skill-pill rounded-3xl border border-[#163d35] bg-[#06110f]/72 p-5 shadow-lg shadow-black/10"><i data-lucide="terminal-square" class="mb-4 text-[#00ffc2]" aria-hidden="true"></i>
+        <h3 class="text-xl font-black">Hacker</h3>
+        <p class="mt-2 text-sm leading-6 text-[#eafff9]/70">Conhecimento técnico aplicado à análise, proteção e compreensão de sistemas digitais.</p>
+       </div>
+       <div class="skill-pill rounded-3xl border border-[#163d35] bg-[#06110f]/72 p-5 shadow-lg shadow-black/10"><i data-lucide="palette" class="mb-4 text-[#00ffc2]" aria-hidden="true"></i>
+        <h3 class="text-xl font-black">Designer</h3>
+        <p class="mt-2 text-sm leading-6 text-[#eafff9]/70">Criação visual com foco em identidade, clareza e apresentação profissional.</p>
+       </div>
+       <div class="skill-pill rounded-3xl border border-[#163d35] bg-[#06110f]/72 p-5 shadow-lg shadow-black/10"><i data-lucide="search" class="mb-4 text-[#00ffc2]" aria-hidden="true"></i>
+        <h3 class="text-xl font-black">OSINT</h3>
+        <p class="mt-2 text-sm leading-6 text-[#eafff9]/70">Investigação com fontes abertas para recolher, organizar e analisar informações digitais.</p>
+       </div>
+       <div class="skill-pill rounded-3xl border border-[#163d35] bg-[#06110f]/72 p-5 shadow-lg shadow-black/10"><i data-lucide="users" class="mb-4 text-[#00ffc2]" aria-hidden="true"></i>
+        <h3 class="text-xl font-black">Engenharia social</h3>
+        <p class="mt-2 text-sm leading-6 text-[#eafff9]/70">Análise de comportamento humano e riscos digitais para reforçar a prevenção.</p>
+       </div>
+       <div class="skill-pill rounded-3xl border border-[#163d35] bg-[#06110f]/72 p-5 shadow-lg shadow-black/10"><i data-lucide="fingerprint" class="mb-4 text-[#00ffc2]" aria-hidden="true"></i>
+        <h3 class="text-xl font-black">Investigador digital</h3>
+        <p class="mt-2 text-sm leading-6 text-[#eafff9]/70">Pesquisa, verificação e interpretação de rastos digitais com método e precisão.</p>
+       </div>
+       <div class="skill-pill rounded-3xl border border-[#163d35] bg-[#06110f]/72 p-5 shadow-lg shadow-black/10"><i data-lucide="shield" class="mb-4 text-[#00ffc2]" aria-hidden="true"></i>
+        <h3 class="text-xl font-black">Cyber segurança</h3>
+        <p class="mt-2 text-sm leading-6 text-[#eafff9]/70">Proteção de informação, orientação de segurança e consciência contra ameaças digitais.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="mx-auto w-full max-w-6xl px-6 py-8 md:px-10">
+     <article id="workPlaceCard" class="fade-up delay-4 rounded-[1.75rem] border border-[#163d35] bg-[#09201c]/82 p-7 shadow-xl shadow-black/20">
+      <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+       <div>
+        <p class="mb-2 text-sm font-black uppercase tracking-[0.26em] text-[#00ffc2]">Local de trabalho</p>
+        <h2 id="workPlaceTitle" class="text-3xl font-black">Onde trabalho</h2>
+        <p id="workPlaceText" class="mt-3 text-lg leading-8 text-[#eafff9]/78">Trabalho no Cyber Joseph Diassonua, atuando em serviços ligados ao universo digital e tecnológico.</p>
+       </div>
+       <div class="flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl bg-[#00ffc2] text-[#06110f] shadow-xl shadow-[#00ffc2]/20"><i data-lucide="cpu" style="width: 42px; height: 42px;" aria-hidden="true"></i>
+       </div>
+      </div>
+     </article>
+    </section>
+    <section id="contacto" class="mx-auto w-full max-w-6xl px-6 pb-14 pt-8 md:px-10 md:pb-20">
+     <div id="contactCard" class="fade-up rounded-[2rem] border border-[#163d35] bg-[#00ffc2] p-7 text-[#06110f] shadow-2xl shadow-[#00ffc2]/20 md:p-10">
+      <div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+       <div>
+        <p class="mb-2 text-sm font-black uppercase tracking-[0.26em] opacity-75">Contacto pessoal</p>
+        <h2 id="contactTitle" class="text-4xl font-black md:text-5xl">Contacto pessoal</h2>
+        <p id="contactText" class="mt-4 max-w-2xl text-lg font-semibold leading-8 opacity-80">Fale comigo pelo WhatsApp para contacto direto, serviços digitais ou oportunidades profissionais.</p>
+        <p class="mt-5 inline-flex items-center gap-3 rounded-2xl bg-[#06110f]/10 px-5 py-3 text-lg font-black"><i data-lucide="phone" aria-hidden="true"></i> +244 939 304 963</p>
+       </div><a id="contactWhatsappButton" href="https://wa.me/244939304963" target="_blank" rel="noopener noreferrer" class="whatsapp-button inline-flex items-center justify-center gap-3 rounded-2xl bg-[#06110f] px-7 py-5 text-base font-black text-[#eafff9] shadow-2xl shadow-black/20"> <i data-lucide="send" aria-hidden="true"></i> <span id="contactButtonText">Enviar mensagem no WhatsApp</span> </a>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="relative z-10 border-t border-[#163d35] bg-[#06110f]/82 px-6 py-6 text-center text-sm font-semibold text-[#eafff9]/62 md:px-10">
+    <p>© <span id="year"></span> José Gonçalves — Sucesso. Perfil pessoal e profissional.</p>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#06110f",
+      surface_color: "#09201c",
+      text_color: "#eafff9",
+      primary_action_color: "#00ffc2",
+      secondary_action_color: "#163d35",
+      font_family: "Urbanist",
+      font_size: 16,
+      hero_title: "José Gonçalves",
+      hero_subtitle: "Conhecido como “Sucesso”",
+      hero_badge: "Cyber Segurança • OSINT • Design",
+      about_title: "Quem sou eu",
+      about_text: "Sou José Gonçalves, conhecido pelo nome de Sucesso. Trabalho com tecnologia, criatividade e investigação digital, sempre procurando soluções inteligentes e seguras.",
+      origin_title: "Onde nasci",
+      origin_text: "Nasci no município fronteiriço do Nóqui, que se encontra a norte de Angola, na província de Zaire.",
+      work_title: "O que eu faço",
+      work_place_title: "Onde trabalho",
+      work_place_text: "Trabalho no Cyber Joseph Diassonua, atuando em serviços ligados ao universo digital e tecnológico.",
+      contact_title: "Contacto pessoal",
+      contact_text: "Fale comigo pelo WhatsApp para contacto direto, serviços digitais ou oportunidades profissionais.",
+      button_text: "Enviar mensagem no WhatsApp"
+    };
+
+    function getConfigValue(config, key) {
+      return config[key] || defaultConfig[key];
+    }
+
+    function applyText(id, value) {
+      const element = document.getElementById(id);
+      if (element) element.textContent = value;
+    }
+
+    async function onConfigChange(config) {
+      const background = getConfigValue(config, "background_color");
+      const surface = getConfigValue(config, "surface_color");
+      const text = getConfigValue(config, "text_color");
+      const primary = getConfigValue(config, "primary_action_color");
+      const secondary = getConfigValue(config, "secondary_action_color");
+      const fontFamily = getConfigValue(config, "font_family");
+      const baseSize = Number(config.font_size || defaultConfig.font_size);
+      const fontStack = `${fontFamily}, Urbanist, Verdana, sans-serif`;
+
+      const shell = document.getElementById("siteShell");
+      shell.style.backgroundColor = background;
+      shell.style.color = text;
+      shell.style.fontFamily = fontStack;
+
+      document.querySelectorAll(".bg-\\[\\#09201c\\]\\/82, .bg-\\[\\#09201c\\]\\/80, .bg-\\[\\#09201c\\]\\/70").forEach((el) => {
+        el.style.backgroundColor = surface + "d9";
+      });
+
+      document.querySelectorAll(".border-\\[\\#163d35\\]").forEach((el) => {
+        el.style.borderColor = secondary;
+      });
+
+      document.querySelectorAll(".text-\\[\\#eafff9\\], .text-\\[\\#eafff9\\]\\/78, .text-\\[\\#eafff9\\]\\/82, .text-\\[\\#eafff9\\]\\/80, .text-\\[\\#eafff9\\]\\/70, .text-\\[\\#eafff9\\]\\/62").forEach((el) => {
+        el.style.color = text;
+      });
+
+      document.querySelectorAll(".text-\\[\\#00ffc2\\]").forEach((el) => {
+        el.style.color = primary;
+      });
+
+      document.querySelectorAll(".bg-\\[\\#00ffc2\\]").forEach((el) => {
+        el.style.backgroundColor = primary;
+      });
+
+      document.querySelectorAll(".text-\\[\\#06110f\\]").forEach((el) => {
+        el.style.color = background;
+      });
+
+      document.querySelectorAll(".bg-\\[\\#06110f\\], .bg-\\[\\#06110f\\]\\/70, .bg-\\[\\#06110f\\]\\/72, .bg-\\[\\#06110f\\]\\/82").forEach((el) => {
+        el.style.backgroundColor = background;
+      });
+
+      applyText("heroTitle", getConfigValue(config, "hero_title"));
+      applyText("navName", getConfigValue(config, "hero_title"));
+      applyText("cardName", getConfigValue(config, "hero_title"));
+
+      applyText("heroSubtitle", getConfigValue(config, "hero_subtitle"));
+      applyText("navAlias", "Sucesso");
+      applyText("cardAlias", "Sucesso");
+
+      applyText("heroBadge", getConfigValue(config, "hero_badge"));
+      applyText("aboutTitle", getConfigValue(config, "about_title"));
+      applyText("aboutText", getConfigValue(config, "about_text"));
+      applyText("originTitle", getConfigValue(config, "origin_title"));
+      applyText("originText", getConfigValue(config, "origin_text"));
+      applyText("workTitle", getConfigValue(config, "work_title"));
+      applyText("workPlaceTitle", getConfigValue(config, "work_place_title"));
+      applyText("workPlaceText", getConfigValue(config, "work_place_text"));
+      applyText("contactTitle", getConfigValue(config, "contact_title"));
+      applyText("contactText", getConfigValue(config, "contact_text"));
+      applyText("buttonText", getConfigValue(config, "button_text"));
+      applyText("contactButtonText", getConfigValue(config, "button_text"));
+
+      document.querySelectorAll("h1").forEach((el) => {
+        el.style.fontFamily = fontStack;
+        el.style.fontSize = `${baseSize * 4.2}px`;
+      });
+
+      document.querySelectorAll("h2").forEach((el) => {
+        el.style.fontFamily = fontStack;
+        el.style.fontSize = `${baseSize * 2.1}px`;
+      });
+
+      document.querySelectorAll("h3").forEach((el) => {
+        el.style.fontFamily = fontStack;
+        el.style.fontSize = `${baseSize * 1.25}px`;
+      });
+
+      document.querySelectorAll("p, a, span, button, div").forEach((el) => {
+        if (!el.closest("h1") && !el.closest("h2") && !el.closest("h3")) {
+          el.style.fontFamily = fontStack;
+        }
+      });
+
+      document.querySelectorAll("p, a, button").forEach((el) => {
+        el.style.fontSize = `${baseSize}px`;
+      });
+
+      document.querySelectorAll(".text-sm").forEach((el) => {
+        el.style.fontSize = `${baseSize * 0.88}px`;
+      });
+
+      document.querySelectorAll(".text-xs").forEach((el) => {
+        el.style.fontSize = `${baseSize * 0.75}px`;
+      });
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_action_color || defaultConfig.primary_action_color,
+              set: (value) => {
+                config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+              set: (value) => {
+                config.secondary_action_color = value;
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["hero_title", config.hero_title || defaultConfig.hero_title],
+          ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+          ["hero_badge", config.hero_badge || defaultConfig.hero_badge],
+          ["about_title", config.about_title || defaultConfig.about_title],
+          ["about_text", config.about_text || defaultConfig.about_text],
+          ["origin_title", config.origin_title || defaultConfig.origin_title],
+          ["origin_text", config.origin_text || defaultConfig.origin_text],
+          ["work_title", config.work_title || defaultConfig.work_title],
+          ["work_place_title", config.work_place_title || defaultConfig.work_place_title],
+          ["work_place_text", config.work_place_text || defaultConfig.work_place_text],
+          ["contact_title", config.contact_title || defaultConfig.contact_title],
+          ["contact_text", config.contact_text || defaultConfig.contact_text],
+          ["button_text", config.button_text || defaultConfig.button_text]
+        ])
+      });
+    } else {
+      onConfigChange(defaultConfig);
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (target) {
+          event.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ffe32f089c7c875',t:'MTc3OTQ3Nzg0NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html> 
